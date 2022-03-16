@@ -10,12 +10,6 @@ export interface GridProps {
   rows?: 1 | 2 | 3;
 }
 
-interface GridComponent {
-  (props: GridProps & JSX.IntrinsicElements["div"]): React.ReactElement | null;
-
-  displayName: string;
-}
-
 export const gridClassName = "fui-Grid";
 
 export const Grid = React.forwardRef<
@@ -30,13 +24,13 @@ export const Grid = React.forwardRef<
       rowsClasses: {
         1: classes.rows1,
         2: classes.rows2,
-        3: classes.rows3
+        3: classes.rows3,
       },
       columnsClasses: {
         1: classes.columns1,
         2: classes.columns2,
-        3: classes.columns3
-      }
+        3: classes.columns3,
+      },
     }),
     [classes]
   );
@@ -51,6 +45,6 @@ export const Grid = React.forwardRef<
     className
   );
   return <div ref={ref} className={gridClasses} {...rest} />;
-}) as GridComponent;
+});
 
 Grid.displayName = "Grid";

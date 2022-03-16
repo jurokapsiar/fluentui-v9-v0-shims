@@ -1,49 +1,60 @@
 import { GriffelStyle } from "@griffel/core";
 
-type Size = {
-  half: GriffelStyle;
-  quarter: GriffelStyle;
-  small: GriffelStyle;
-  medium: GriffelStyle;
-  large: GriffelStyle;
-  (flexBasis: string): GriffelStyle;
-};
-
-const align = {
+const ALIGN = {
   auto: { alignSelf: "auto" },
   start: { alignSelf: "flex-start" },
   end: { alignSelf: "flex-end" },
   center: { alignSelf: "center" },
   baseline: { alignSelf: "baseline" },
-  stretch: { alignSelf: "stretch" }
+  stretch: { alignSelf: "stretch" },
 };
 
-const size = ((flexBasis: string) => ({ flexBasis })) as Size;
-size.half = { flexBasis: "50%" };
-size.quarter = { flexBasis: "25%" };
-size.small = { flexBasis: "150px" };
-size.medium = { flexBasis: "200px" };
-size.large = { flexBasis: "300px" };
+const SIZE = {
+  half: { flexBasis: "50%" },
+  quarter: { flexBasis: "25%" },
+  small: { flexBasis: "150px" },
+  medium: { flexBasis: "200px" },
+  large: { flexBasis: "300px" },
+};
 
-const grow = (flexGrow: boolean | number) => {
+const align: (
+  value: "auto" | "start" | "end" | "center" | "baseline" | "stretch"
+) => GriffelStyle = value => {
+  return ALIGN[value];
+};
+
+const size: (
+  value: "half" | "quarter" | "small" | "medium" | "large"
+) => GriffelStyle = value => {
+  return SIZE[value];
+};
+
+const grow: (
+  flexGrow: boolean | number
+) => GriffelStyle | undefined = flexGrow => {
   if (flexGrow === true) {
     return { flexGrow: 1 };
   } else if (flexGrow) {
     return { flexGrow };
+  } else {
+    return undefined;
   }
 };
-grow.flexGrow = 1;
 
-const shrink = (flexShrink: boolean | number) => {
+const shrink: (
+  flexShrink: boolean | number
+) => GriffelStyle | undefined = flexShrink => {
   if (typeof flexShrink === "number") {
     return { flexShrink };
   } else if (flexShrink === false) {
     return { flexShrink: 0 };
+  } else {
+    return undefined;
   }
 };
 
-const pushRow = { marginLeft: "auto" };
-const pushColumn = { marginTop: "auto" };
+const pushRow: () => GriffelStyle = () => ({ marginLeft: "auto" });
+const pushColumn: () => GriffelStyle = () => ({ marginTop: "auto" });
 
 export const flexItem = {
   align,
@@ -51,5 +62,5 @@ export const flexItem = {
   grow,
   shrink,
   pushRow,
-  pushColumn
+  pushColumn,
 };

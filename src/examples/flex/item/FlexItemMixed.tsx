@@ -2,9 +2,12 @@ import { Flex } from "../../../components";
 import { FlexItem, Segment } from "@fluentui/react-northstar";
 import React from "react";
 
+import { useStyles } from "./FlexItemV9.styles";
+
 export const FlexItemMixed = () => {
+  const classes = useStyles();
   return (
-      <Flex gap="gap.small" hAlign="center" vAlign="center" debug>
+      <Flex gap="gap.small" hAlign="center" vAlign="center" className={classes.debug}>
       <FlexItem align="start" size="size.small">
         <Segment content="This cell should be top aligned." />
       </FlexItem>

@@ -1,111 +1,95 @@
 import { makeStyles, shorthands } from "@fluentui/react-components";
 
-export const gapValues = {
+const gapValues = {
   smaller: "8px",
   small: "10px",
   medium: "15px",
-  large: "30px"
+  large: "30px",
 };
 
-export const paddingValues = {
-  medium: "10px"
+const paddingValues = {
+  medium: "10px",
 };
 
 export const useFlexStyles = makeStyles({
   flex: {
-    display: "flex"
+    display: "flex",
   },
   debug: {
     ...shorthands.border("1px", "dotted", "gray"),
-    backgroundColor: "lightgrey"
+    backgroundColor: "lightgrey",
   },
   inline: {
-    display: "inline-flex"
+    display: "inline-flex",
   },
   column: {
-    flexDirection: "column"
+    flexDirection: "column",
   },
   alignItemsFlexStart: {
-    alignItems: "flex-start"
+    alignItems: "flex-start",
   },
   alignItemsCenter: {
-    alignItems: "center"
+    alignItems: "center",
   },
   alignItemsFlexEnd: {
-    alignItems: "flex-end"
+    alignItems: "flex-end",
   },
   alignItemsStretch: {
-    alignItems: "stretch"
+    alignItems: "stretch",
   },
   justifyContentFlexStart: {
-    justifyContent: "flex-start"
+    justifyContent: "flex-start",
   },
   justifyContentCenter: {
-    justifyContent: "center"
+    justifyContent: "center",
   },
   justifyContentFlexEnd: {
-    justifyContent: "flex-end"
+    justifyContent: "flex-end",
   },
   justifyContentStretch: {
-    justifyContent: "stretch"
+    justifyContent: "stretch",
   },
   justifyContentSpaceAround: {
-    justifyContent: "space-around"
+    justifyContent: "space-around",
   },
   justifyContentSpaceBetween: {
-    justifyContent: "space-between"
+    justifyContent: "space-between",
   },
   justifyContentSpaceEvenly: {
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
   },
   wrap: {
-    flexWrap: "wrap"
+    flexWrap: "wrap",
   },
   fill: {
     width: "100%",
-    height: "100%"
+    height: "100%",
   },
   gapColumnSmall: {
-    "> *:not(:last-child)": {
-      marginBottom: gapValues["small"]
-    }
+    columnGap: gapValues["small"],
   },
   gapColumnSmaller: {
-    "> *:not(:last-child)": {
-      marginBottom: gapValues["smaller"]
-    }
+    columnGap: gapValues["smaller"],
   },
   gapColumnMedium: {
-    "> *:not(:last-child)": {
-      marginBottom: gapValues["medium"]
-    }
+    columnGap: gapValues["medium"],
   },
   gapColumnLarge: {
-    "> *:not(:last-child)": {
-      marginBottom: gapValues["large"]
-    }
+    columnGap: gapValues["large"],
   },
   gapSmall: {
-    "> *:not(:last-child)": {
-      marginRight: gapValues["small"]
-    }
+    rowGap: gapValues["small"],
   },
   gapSmaller: {
-    "> *:not(:last-child)": {
-      marginRight: gapValues["smaller"]
-    }
+    rowGap: gapValues["smaller"],
   },
   gapMedium: {
-    "> *:not(:last-child)": {
-      marginRight: gapValues["medium"]
-    }
+    rowGap: gapValues["medium"],
   },
   gapLarge: {
-    "> *:not(:last-child)": {
-      marginRight: gapValues["large"]
-    }
+    rowGap: gapValues["large"],
   },
   paddingMedium: {
-    ...shorthands.padding(paddingValues["medium"])
-  }
+    ...shorthands.padding(paddingValues["medium"]),
+  },
 });

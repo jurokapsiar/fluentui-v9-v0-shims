@@ -1,11 +1,13 @@
 import { Flex } from "../../../components";
 import { FlexItem, Text } from "@fluentui/react-northstar";
 import React from "react";
+import { useStyles } from "./FlexItemCardV9.styles";
 import { Placeholder } from "../Placeholder";
 
 export const FlexItemCardMixed = () => {
+  const classes = useStyles();
   return (
-    <Flex gap="gap.medium" padding="padding.medium" debug>
+    <Flex gap="gap.medium" padding="padding.medium" className={classes.debug}>
     <FlexItem size="size.medium">
       <div
         style={{

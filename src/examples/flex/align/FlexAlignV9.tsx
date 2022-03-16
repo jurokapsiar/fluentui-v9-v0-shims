@@ -2,11 +2,13 @@ import * as React from "react";
 
 import { Flex, FlexProps } from "./../../../components";
 import { Placeholder } from "../Placeholder";
+import { useStyles } from "./FlexAlignV9.styles";
 
 export const FlexAlignV9 = () => {
+  const classes = useStyles();
   return (
     <>
-      <Flex column gap="gap.large" hAlign="center" vAlign="center" debug>
+      <Flex column gap="gap.large" hAlign="center" vAlign="center" className={classes.debug}>
         {[
           {
             key: "start",
@@ -70,7 +72,7 @@ export const FlexAlignV9 = () => {
                   width: "100px",
                   height: "100px"
                 }}
-                debug
+                className={classes.debug}
               >
                 <Placeholder>V:{alignmentProps.vAlign}<br />H:{alignmentProps.hAlign}</Placeholder>
               </Flex>

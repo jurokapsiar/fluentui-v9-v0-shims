@@ -3,9 +3,9 @@ import { flexItem } from "../../../components";
 
 export const useStyles = makeStyles({
   half: {
-      ...flexItem.size.half
+      ...flexItem.size("half")
   },
   quarter: {
-    ...flexItem.size.quarter
+    ...flexItem.size("quarter")
   },
 });

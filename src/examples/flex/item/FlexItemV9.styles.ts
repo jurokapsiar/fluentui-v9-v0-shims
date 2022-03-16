@@ -3,18 +3,22 @@ import { flexItem } from "../../../components";
 
 export const useStyles = makeStyles({
   start: {
-      ...flexItem.align.start
+      ...flexItem.align("start")
   },
   stretch: {
-    ...flexItem.align.stretch
+    ...flexItem.align("stretch")
   },
   center: {
-    ...flexItem.align.center
+    ...flexItem.align("center")
   },
   end: {
-    ...flexItem.align.end
+    ...flexItem.align("end")
   },
   small: {
-      ...flexItem.size.small
+      ...flexItem.size("small")
+  },
+  debug: {
+    ...shorthands.border('1px', 'dotted', 'grey'),
+    backgroundColor: 'lightgrey',
   }
 });

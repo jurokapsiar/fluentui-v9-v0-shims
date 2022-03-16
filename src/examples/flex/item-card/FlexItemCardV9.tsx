@@ -7,7 +7,7 @@ import { Placeholder } from "../Placeholder";
 export const FlexItemCardV9 = () => {
   const classes = useStyles();
   return (
-    <Flex gap="gap.medium" padding="padding.medium" debug>
+    <Flex gap="gap.medium" padding="padding.medium" className={classes.debug}>
       <div
         className={classes.medium}
         style={{
